@@ -21,14 +21,12 @@ public class MainActivity extends AppCompatActivity {
     private TextView textViewTimer;
     private TextView textViewScore;
     private TextView textViewQuestion;
-
     private String question;
     private int rightAnswer;
     private int rightAnswerPosition;
-    private boolean isPositive; //положительное число
+    private boolean isPositive;
     private int min = 5;
     private int max = 30;
-
     private int countOfQuestions = 0;
     private int countOfRightAnswers = 0;
     private boolean gameOver = false;
@@ -83,7 +81,6 @@ public class MainActivity extends AppCompatActivity {
             int answer;
             if (i == rightAnswerPosition) {
                 answer = rightAnswer;
-                //options.get(i).setText(Integer.toString(rightAnswer));
             } else {
                 do {
                     answer = (int) (Math.random() * max * 2 + 1) - (max - min);
@@ -114,7 +111,6 @@ public class MainActivity extends AppCompatActivity {
     private void generateQuestion() {
         int a = (int) (Math.random() * (max - min + 1) + min);
         int b = (int) (Math.random() * (max - min + 1) + min);
-        //Устанавливаем значение знака ( + или - оно будет)
         int mark = (int) (Math.random() * 2);
         isPositive = mark == 1;
         if (isPositive) {
